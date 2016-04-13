@@ -12,8 +12,10 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
     <!--<script src="../bower_components/angular/angular.js"></script>-->
-    <script src="http://code.angularjs.org/1.4.4/angular.min.js"></script>
+    <script src="http://code.angularjs.org/1.4.4/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.4.4/angular-resource.min.js"></script>
     <script src="angular-file-upload.min.js"></script>
+    <script src="lb-services.js"></script>
     <script src="controllers.js"></script>
 
     <style>
@@ -39,6 +41,15 @@
 
 <!-- 1. nv-file-drop | nv-file-drop="options" -->
 <body ng-controller="TestController" nv-file-drop uploader="uploader">
+
+  <button type="button" class="btn btn-danger btn-large"
+          ng-click="logout()">
+      Logout
+  </button>
+  <button type="button" class="btn btn-success btn-large"
+          ng-click="login()">
+      Login as Admin
+  </button>
 
 <div class="container">
 

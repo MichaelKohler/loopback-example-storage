@@ -1,7 +1,7 @@
-angular.module('app', ['angularFileUpload'])
+angular.module('app', ['angularFileUpload', 'ngResource', 'lbServices'])
 
   // The example of the full functionality
-  .controller('TestController',function ($scope, FileUploader) {
+  .controller('TestController',function ($scope, FileUploader, User) {
     'use strict';
 
     // create a uploader with options
@@ -70,6 +70,34 @@ angular.module('app', ['angularFileUpload'])
       console.info('Complete all');
     };
     // --------------------
+    //
+    //
+
+
+    $scope.login = function () {
+      var credentials = {
+        username: 'Bob',
+        password: 'opensesame'
+      };
+      User.login(credentials).$promise
+        .then(function () {
+          console.log('Logged in!');
+        })
+        .catch(function (err) {
+          console.log('Got an error!');
+          console.log(err);
+        });
+    };
+
+    $scope.logout = function() {
+      User.logout().$promise
+        .then(function () {
+          console.log('Logged out');
+        })
+        .catch(function (err) {
+          console.log(err);
+        });
+    }
   }
 ).controller('FilesController', function ($scope, $http) {
 
