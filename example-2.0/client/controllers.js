@@ -8,7 +8,7 @@ angular.module('app', ['angularFileUpload'])
 
     var uploader = $scope.uploader = new FileUploader({
       scope: $scope,                          // to automatically update the html. Default: $rootScope
-      url: '/api/containers/container1/upload',
+      url: 'http://localhost:3000/api/containers/container1/upload',
       formData: [
         { key: 'value' }
       ]
@@ -74,14 +74,14 @@ angular.module('app', ['angularFileUpload'])
 ).controller('FilesController', function ($scope, $http) {
 
     $scope.load = function () {
-      $http.get('/api/containers/container1/files').success(function (data) {
+      $http.get('http://localhost:3000/api/containers/container1/files').success(function (data) {
         console.log(data);
         $scope.files = data;
       });
     };
 
     $scope.delete = function (index, id) {
-      $http.delete('/api/containers/container1/files/' + encodeURIComponent(id)).success(function (data, status, headers) {
+      $http.delete('http://localhost:3000/api/containers/container1/files/' + encodeURIComponent(id)).success(function (data, status, headers) {
         $scope.files.splice(index, 1);
       });
     };

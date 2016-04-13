@@ -1,6 +1,6 @@
 {
   "name": "container",
-  "base": "PersistedModel",
+  "base": "Model",
   "properties": {},
   "validations": [],
   "relations": {},
@@ -24,6 +24,6 @@
         "principalId": "admin",
         "permission": "ALLOW"
     }
-  ],
+    ],
   "methods": []
 }
