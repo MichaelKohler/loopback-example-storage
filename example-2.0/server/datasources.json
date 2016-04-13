@@ -3,6 +3,13 @@
     "name": "db",
     "connector": "memory"
   },
+  "mongodb": {
+    "host": "127.0.0.1",
+    "port": 27017,
+    "database": "test_container",
+    "name": "mongodb",
+    "connector": "mongodb"
+  },
   "storage": {
     "name": "storage",
     "connector": "loopback-component-storage",
